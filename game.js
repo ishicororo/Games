@@ -1,38 +1,43 @@
 const fs=require("fs");
 let data=JSON.parse(fs.readFileSync('data.json','utf8'));
+let progress=1;
 process.stdin.setEncoding("utf8");
 console.log("こんにちは、ユーザー名を入力してください");
-process.stdin.on('data',(chunk)=>{
+process.stdin.on('data',(input)=>{
+    if(progress===1){
     console.clear();
-    chunk=chunk.trim();
-    if(!(chunk in data.users)){
-        data.users[chunk]={
+    input=input.trim();
+    if(!(input in data.users)){
+        data.users[input]={
             info:true,
         };
-        console.log("初めまして、"+chunk+"さん");
+        console.log("初めまして、"+input+"さん");
         process.stdout.write("少々お待ちください...");
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         process.stdin.pause();
-        start(chunk);
+        console.log("ゲームを選択してください。");
+        console.log("1:じゃんけん");
+        console.log("2:オセロ");
+        console.log("3:五目並べ");
+        progress+=1;
     }
     else{
-        console.log("こんにちは、"+chunk+"さん");
+        console.log("こんにちは、"+input+"さん");
         process.stdin.pause();
-        start();
+        console.log("ゲームを選択してください。");
+        console.log("1:じゃんけん");
+        console.log("2:オセロ");
+        console.log("3:五目並べ");
+        progress+=1;
 
     }
-})
-function start(name){
-    console.log("ゲームを選択してください。");
-    console.log("1:じゃんけん");
-    console.log("2:オセロ");
-    console.log("3:五目並べ");
-    process.stdin.on('data',(gameNumber)=>{
-        console.clear();
-        if(gameNumber==="1"){
-            console.log("どちらかを選択してください");
-            console.log("1:AIと対戦する");
-            console.log("AIとともに相手と対戦する");
-        }
-    })
 }
+    if(progress===2){
+        console.clear();
+    if(input==="1"){
+        console.log("どちらかを選択してください");
+        console.log("1:AIと対戦する");
+        console.log("AIとともに相手と対戦する");
+    }
+    }
+})

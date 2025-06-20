@@ -14,7 +14,6 @@ process.stdin.on('data',(input)=>{
         console.log("初めまして、"+input+"さん");
         process.stdout.write("少々お待ちください...");
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
-        process.stdin.pause();
         console.log("ゲームを選択してください。");
         console.log("1:じゃんけん");
         console.log("2:オセロ");
@@ -23,7 +22,6 @@ process.stdin.on('data',(input)=>{
     }
     else{
         console.log("こんにちは、"+input+"さん");
-        process.stdin.pause();
         console.log("ゲームを選択してください。");
         console.log("1:じゃんけん");
         console.log("2:オセロ");

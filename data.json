@@ -1,0 +1,14 @@
+{
+  "display": true,
+  "users": {
+    "1": {
+      "info": true
+    },
+    "takeshi": {
+      "info": true
+    },
+    "kihira": {
+      "info": true
+    }
+  }
+}

@@ -12,7 +12,7 @@ process.stdin.on('data',(input)=>{
         console.log("ゲームを終了します。");
         process.exit();
     }
-    else if(input=".back"){
+    else if(input===".back"){
         if(progress===1){
             console.clear();
             console.log("こんにちは、ユーザー名を入力してください");

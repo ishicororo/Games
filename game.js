@@ -91,7 +91,7 @@ process.stdin.on('data',(input)=>{
         progress=5;
     }
     else{
-        console.log(有効な数字を入力してください);
+        console.log("有効な数字を入力してください");
         console.log("1:じゃんけん");
         console.log("2:オセロ");
         console.log("3:五目並べ");
@@ -129,11 +129,32 @@ process.stdin.on('data',(input)=>{
             progress=9;
         }
         else if(input==="3"){
-            console.log("他の人と対戦します")
+            console.log("他の人と対戦します");
+            progress=10;
+        }
+        else{
+            console.log("有効な数字を入力してください");
+            console.log("1：AIと対戦ーコマの数");
+            console.log("2：AIと対戦ー勝率");
+            console.log("3：2人で対戦");
+
         }
     }
-    else if(progress===5){
+    else if(progress==="1"){
         console.clear();
+        if(input==="1"){
+            console.log("AIと対戦します");
+            progress=11;
+        }
+        else if(input==="2"){
+            console.log("他の人と対戦します");
+            progress=12;
+        }
+        else{
+            console.log("有効な数字を入力してください");
+            console.log("1：AIと対戦");
+            console.log("2：2人で対戦");
+        }
     }
 }
 })

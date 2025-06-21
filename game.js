@@ -90,6 +90,9 @@ process.stdin.on('data',(input)=>{
         console.log("2：2人で対戦");
         progress=5;
     }
+    else{
+        console.log(有効な数字を入力してください);
+    }
     }
     else if(progress===3){
         console.clear();

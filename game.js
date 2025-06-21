@@ -157,12 +157,18 @@ process.stdin.on('data',(input)=>{
             console.log("2：2人で対戦");
         }
     }
+    //AIとじゃんけん
+    else if(progress===6){}
+    //じゃんけんのサポート
+    else if(progress===7){}
+    //オセロ（コマ数）
+    else if(progress===8){}
 }
 })
 function playJankennVsAI(data){};
 function playJankennWithAI(data){};
-function playOthelloVsAIwithPercent(data){};
 function playOthelloVsAIwithNumber(data){};
+function playOthelloVsAIwithPercentage(data){};
 function playOthelloVsOther(data){};
 function playGmokuVsAI(data){};
 function playGmokuVsOther(data){};

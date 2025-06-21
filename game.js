@@ -139,7 +139,7 @@ process.stdin.on('data',(input)=>{
 
         }
     }
-    else if(progress==="1"){
+    else if(progress===5){
         console.clear();
         if(input==="1"){
             console.log("AIと対戦します");

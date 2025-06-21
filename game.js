@@ -41,7 +41,7 @@ process.stdin.on('data',(input)=>{
             playingGame:{
                 jankenn:false,
                 othello:false,
-                gomokunarabe:false,
+                gomoku:false,
             }
         };
         console.log("初めまして、"+input+"さん");
@@ -84,7 +84,7 @@ process.stdin.on('data',(input)=>{
         progress=4;
     }
     else if(input==="3"){
-        data.users[name].playingGame.gomokunarabe=true;
+        data.users[name].playingGame.gomoku=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("1：AIと対戦");
         console.log("2：2人で対戦");
@@ -96,3 +96,10 @@ process.stdin.on('data',(input)=>{
     else if(progress===5){}
 }
 })
+function playJankennVsAI(data){};
+function playJankennWithAI(data){};
+function playOthelloVsAIwithPercent(data){};
+function playOthelloVsAIwithNumber(data){};
+function playOthelloVsOther(data){};
+function playGmokuVsAI(data){};
+function playGmokuVsOther(data){};

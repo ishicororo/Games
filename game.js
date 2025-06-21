@@ -8,7 +8,11 @@ console.log("こんにちは、ユーザー名を入力してください");
 process.stdin.on('data',(input)=>{
     input=input.trim();
     console.clear();
-    if(input=".back"){
+    if(input===".exit"){
+        console.log("ゲームを終了します。");
+        process.exit();
+    }
+    else if(input=".back"){
         if(progress===1){
             console.clear();
             console.log("こんにちは、ユーザー名を入力してください");
@@ -22,10 +26,6 @@ process.stdin.on('data',(input)=>{
             console.log("3：五目並べ");
         }
         else if(progress===3||progress===4||progress===5){progress=2}
-    }
-    else if(input===".exit"){
-        console.log("ゲームを終了します。");
-        process.exit();
     }
     else{
     if(progress===1){

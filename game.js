@@ -62,7 +62,7 @@ process.stdin.on('data',(input)=>{
     else if(progress===2){
         console.clear();
     if(input==="1"){
-        data.users[name].playngGame.jankenn=true;
+        data.users[name].playingGame.jankenn=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("どちらかを選択してください");
         console.log("1:AIと対戦する");
@@ -70,7 +70,7 @@ process.stdin.on('data',(input)=>{
         progress=3;
     }
     else if(input==="2"){
-        data.users[name].playngGame.othello=true;
+        data.users[name].playingGame.othello=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("選択してください");
         console.log("1：AIと対戦ー勝率");
@@ -79,7 +79,7 @@ process.stdin.on('data',(input)=>{
         progress=4;
     }
     else if(input==="3"){
-        data.users[name].playngGame.gomokunarabe=true;
+        data.users[name].playingGame.gomokunarabe=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("1：AIと対戦");
         console.log("2：2人で対戦");

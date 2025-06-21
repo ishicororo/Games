@@ -91,9 +91,26 @@ process.stdin.on('data',(input)=>{
         progress=5;
     }
     }
-    else if(progress===3){}
-    else if(progress===4){}
-    else if(progress===5){}
+    else if(progress===3){
+        console.clear();
+        if(input==="1"){
+            progress=6;
+            console.log("AIはプレイするごとに学習して強くなります")
+            console.log("じゃんけんを始めます、カタカナで入力してください");
+            console.log("最初はグー、じゃんけん...");
+        }
+        else if(input==="2"){
+            progress=7;
+            console.log("AIはプレイするほど強くなります");
+            console.log("プレイする相手の名前を入力してください")
+        }
+    }
+    else if(progress===4){
+        console.clear();
+    }
+    else if(progress===5){
+        console.clear();
+    }
 }
 })
 function playJankennVsAI(data){};

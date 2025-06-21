@@ -26,7 +26,6 @@ process.stdin.on('data',(input)=>{
             progress=2;
             console.log("こんにちは、"+name+"さん");
             console.log("ゲームを選択してください");
-            console.log("ゲームを選択してください。");
             console.log("1:じゃんけん");
             console.log("2:オセロ");
             console.log("3:五目並べ");

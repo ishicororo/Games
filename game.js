@@ -20,10 +20,7 @@ process.stdin.on('data',(input)=>{
         else if(progress===2){
             progress=1;
             console.clear();
-            console.log("ゲームを選択してください");
-            console.log("1：じゃんけん");
-            console.log("2：オセロ");
-            console.log("3：五目並べ");
+            console.log("こんにちは、ユーザー名を入力してください")
         }
         else if(progress===3||progress===4||progress===5){progress=2}
     }

@@ -1,6 +1,7 @@
 const fs=require("fs");
 let data=JSON.parse(fs.readFileSync('data.json','utf8'));
 let progress=1;
+let name;
 process.stdin.setEncoding("utf8");
 console.clear();
 console.log("こんにちは、ユーザー名を入力してください");
@@ -29,6 +30,7 @@ process.stdin.on('data',(input)=>{
     else{
     if(progress===1){
     if(!(input in data.users)){
+        name=input;
         data.users[input]={
             info:true,
             playngGame:{
@@ -59,12 +61,14 @@ process.stdin.on('data',(input)=>{
     else if(progress===2){
         console.clear();
     if(input==="1"){
+        data.users[name].playngGame.jankenn=true;
         console.log("どちらかを選択してください");
         console.log("1:AIと対戦する");
         console.log("2:AIとともに相手と対戦する");
         progress=3;
     }
     else if(input==="2"){
+        data.users[name].playngGame.othello=true;
         console.log("選択してください");
         console.log("1：AIと対戦ー勝率");
         console.log("2：AIと対戦ーコマの数");
@@ -72,6 +76,7 @@ process.stdin.on('data',(input)=>{
         progress=4;
     }
     else if(input==="3"){
+        data.users[name].playngGame.gomokunarabe=true;
         console.log("1：AIと対戦");
         console.log("2：2人で対戦");
         progress=5;

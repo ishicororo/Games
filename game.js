@@ -2,6 +2,7 @@ const fs=require("fs");
 let data=JSON.parse(fs.readFileSync('data.json','utf8'));
 let progress=1;
 process.stdin.setEncoding("utf8");
+console.clear();
 console.log("こんにちは、ユーザー名を入力してください");
 process.stdin.on('data',(input)=>{
     input=input.trim();

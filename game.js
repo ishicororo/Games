@@ -32,6 +32,30 @@ process.stdin.on('data',(input)=>{
             console.log("2:オセロ");
             console.log("3:五目並べ");
         }
+        else if(progress===6||progress===7||progress===8||progress===9||progress===10||progress===11||progress===12){
+            if(data.users[name].playingGame.jankenn===true){
+                progress=3;
+                console.log("じゃんけん");
+                console.log("どちらかを選択してください");
+                console.log("1:AIと対戦する");
+                console.log("2:AIとともに相手と対戦する");
+            }
+            else if(data.users[name].playingGame.othello===true){
+                progress=4;
+                console.log("オセロ");
+                console.log("選択してください");
+                console.log("1：AIと対戦ーコマの数");
+                console.log("2：AIと対戦ー勝率");
+                console.log("3：2人で対戦");
+            }
+            else if(data.users[name].playingGame.gomoku===true){
+                progress=5;
+                console.log("五目並べ");
+                console.log("選択してください")
+                console.log("1：AIと対戦");
+                console.log("2：2人で対戦");
+            }
+        }
     }
     else{
     if(progress===1){
@@ -70,6 +94,7 @@ process.stdin.on('data',(input)=>{
     if(input==="1"){
         data.users[name].playingGame.jankenn=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
+        console.log("じゃんけん");
         console.log("どちらかを選択してください");
         console.log("1:AIと対戦する");
         console.log("2:AIとともに相手と対戦する");
@@ -78,6 +103,7 @@ process.stdin.on('data',(input)=>{
     else if(input==="2"){
         data.users[name].playingGame.othello=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
+        console.log("オセロ");
         console.log("選択してください");
         console.log("1：AIと対戦ーコマの数");
         console.log("2：AIと対戦ー勝率");
@@ -87,6 +113,8 @@ process.stdin.on('data',(input)=>{
     else if(input==="3"){
         data.users[name].playingGame.gomoku=true;
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
+        console.log("五目並べ");
+        console.log("選択してください");
         console.log("1：AIと対戦");
         console.log("2：2人で対戦");
         progress=5;

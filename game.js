@@ -91,5 +91,8 @@ process.stdin.on('data',(input)=>{
         progress=5;
     }
     }
+    else if(progress===3){}
+    else if(progress===4){}
+    else if(progress===5){}
 }
 })

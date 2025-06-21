@@ -8,9 +8,19 @@ process.stdin.on('data',(input)=>{
     input=input.trim();
     console.clear();
     if(input=".back"){
-        if(progress===1){}
-        else if(progress===2){progress=1}
-        else if(progress===3){}
+        if(progress===1){
+            console.clear();
+            console.log("こんにちは、ユーザー名を入力してください");
+        }
+        else if(progress===2){
+            progress=1;
+            console.clear();
+            console.log("ゲームを選択してください");
+            console.log("1：じゃんけん");
+            console.log("2：オセロ");
+            console.log("3：五目並べ");
+        }
+        else if(progress===3||progress===4||progress===5){progress=2}
     }
     else if(input===".exit"){
         console.log("ゲームを終了します。");
@@ -21,6 +31,11 @@ process.stdin.on('data',(input)=>{
     if(!(input in data.users)){
         data.users[input]={
             info:true,
+            playngGame:{
+                jankenn:false,
+                othello:false,
+                gomokunarabe:false,
+            }
         };
         console.log("初めまして、"+input+"さん");
         process.stdout.write("少々お待ちください...");

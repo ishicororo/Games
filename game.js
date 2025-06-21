@@ -49,6 +49,7 @@ process.stdin.on('data',(input)=>{
         progress=2;
     }
     else{
+        name=input;
         console.log("こんにちは、"+input+"さん");
         console.log("ゲームを選択してください。");
         console.log("1:じゃんけん");

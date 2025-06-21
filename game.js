@@ -7,7 +7,12 @@ console.log("こんにちは、ユーザー名を入力してください");
 process.stdin.on('data',(input)=>{
     input=input.trim();
     console.clear();
-    if(input===".exit"){
+    if(input=".back"){
+        if(progress===1){}
+        else if(progress===2){progress=1}
+        else if(progress===3){}
+    }
+    else if(input===".exit"){
         console.log("ゲームを終了します。");
         process.exit();
     }

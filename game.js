@@ -20,7 +20,9 @@ process.stdin.on('data',(input)=>{
         else if(progress===2){
             progress=1;
             console.clear();
-            console.log("こんにちは、ユーザー名を入力してください")
+            console.log("こんにちは、ユーザー名を入力してください");
+            delete data.users[name];
+            fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         }
         else if(progress===3||progress===4||progress===5){
             progress=2;

@@ -122,6 +122,8 @@ process.stdin.on('data',(input)=>{
         if(input==="1"){
             console.log("AIは常にAIのコマが最も大きくなる答えを出します");
             console.log("これは初級者向けです");
+            console.log("位置は「縦,横（1,1など)」で入力");
+            console.log("準備はいいですか？");
             progress=8;
         }
         else if(input==="2"){
@@ -157,12 +159,20 @@ process.stdin.on('data',(input)=>{
             console.log("2：2人で対戦");
         }
     }
-    //AIとじゃんけん
+    //じゃんけん（AIと）
     else if(progress===6){}
-    //じゃんけんのサポート
+    //じゃんけん
     else if(progress===7){}
     //オセロ（コマ数）
     else if(progress===8){}
+    //オセロ（勝率）
+    else if(progress===9){}
+    //オセロ（他の人と）
+    else if(progress===10){}
+    //五目並べ（AIと）
+    else if(progress===11){}
+    //五目並べ（他の人と）
+    else if(progress===12){}
 }
 })
 function playJankennVsAI(data){};

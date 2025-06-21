@@ -22,7 +22,15 @@ process.stdin.on('data',(input)=>{
             console.clear();
             console.log("こんにちは、ユーザー名を入力してください")
         }
-        else if(progress===3||progress===4||progress===5){progress=2}
+        else if(progress===3||progress===4||progress===5){
+            progress=2;
+            console.log("こんにちは、"+name+"さん");
+            console.log("ゲームを選択してください");
+            console.log("ゲームを選択してください。");
+            console.log("1:じゃんけん");
+            console.log("2:オセロ");
+            console.log("3:五目並べ");
+        }
     }
     else{
     if(progress===1){

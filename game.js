@@ -124,15 +124,25 @@ process.stdin.on('data',(input)=>{
             console.log("これは初級者向けです");
             console.log("位置は「縦,横（1,1など)」で入力");
             console.log("準備はいいですか？");
+            console.log("1：はい");
+            console.log("2：いいえ");
             progress=8;
         }
         else if(input==="2"){
             console.log("AIは勝率が最も高くなる手を選びます")
             console.log("これは上級者向けです");
+            console.log("位置は「縦,横（1,1など)」で入力");
+            console.log("準備はいいですか？");
+            console.log("1：はい");
+            console.log("2：いいえ");
             progress=9;
         }
         else if(input==="3"){
             console.log("他の人と対戦します");
+            console.log("位置は「縦,横（1,1など)」で入力");
+            console.log("準備はいいですか？");
+            console.log("1：はい");
+            console.log("2：いいえ");
             progress=10;
         }
         else{
@@ -147,10 +157,18 @@ process.stdin.on('data',(input)=>{
         console.clear();
         if(input==="1"){
             console.log("AIと対戦します");
+            console.log("位置は「縦,横（1,1など)」で入力");
+            console.log("準備はいいですか？");
+            console.log("1：はい");
+            console.log("2：いいえ");
             progress=11;
         }
         else if(input==="2"){
             console.log("他の人と対戦します");
+            console.log("位置は「縦,横（1,1など)」で入力");
+            console.log("準備はいいですか？");
+            console.log("1：はい");
+            console.log("2：いいえ");
             progress=12;
         }
         else{

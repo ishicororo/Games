@@ -33,7 +33,7 @@ process.stdin.on('data',(input)=>{
         name=input;
         data.users[input]={
             info:true,
-            playngGame:{
+            playingGame:{
                 jankenn:false,
                 othello:false,
                 gomokunarabe:false,

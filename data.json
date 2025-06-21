@@ -1,13 +1,4 @@
 {
   "display": true,
-  "users": {
-    "kihira":{
-      "info":true,
-      "playingGame":{
-        "jankenn":false,
-        "othello":false,
-        "gomokunarabe":false
-      }
-    }
-  }
+  "users": {}
 }

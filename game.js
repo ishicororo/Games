@@ -45,6 +45,7 @@ process.stdin.on('data',(input)=>{
         else{
             console.log("了解しました");
             console.log("ではユーザー名を入力してください");
+            display=false;
         }
     }
     else if(input===".help"){

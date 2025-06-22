@@ -22,7 +22,7 @@ else console.log("こんにちは、ユーザー名を入力してください")
 process.stdin.on('data',(input)=>{
     input=input.trim();
     console.clear();
-    if(deleteOK==="true"){
+    if(deleteOK===true){
         if(input==="1"){
             delete data.users[name];
             console.log("現在のユーザーを削除しました");
@@ -61,6 +61,7 @@ process.stdin.on('data',(input)=>{
         console.log("本当に削除しますか");
         console.log("1：はい");
         console.log("2：いいえ");
+        deleteOK=true;
     }
     else if(input===".exit"){
         console.log("ゲームを終了します。");

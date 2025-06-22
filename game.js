@@ -6,6 +6,7 @@ process.stdin.setEncoding("utf8");
 console.clear();
 let display;
 let deleteOK=false;
+let resetOK=false;
 if(data.display===true){
     console.log("このゲームの使い方を説明します");
     console.log("ゲームはじゃんけん、オセロ、五目並べの三種類です");
@@ -27,11 +28,13 @@ process.stdin.on('data',(input)=>{
             delete data.users[name];
             console.log("現在のユーザーを削除しました");
             console.log("ユーザー名を入力してください");
+            progress=1;
             fs.writeFileSync("data.json",JSON.stringify(data,null,2));
         }
         else{
             console.log("削除を取り止めました");
             console.log("ユーザー名を入力してください");
+            progress=1;
             fs.writeFileSync("data.json",JSON.stringify(data,null,2));
         }
     }
@@ -46,6 +49,22 @@ process.stdin.on('data',(input)=>{
             console.log("了解しました");
             console.log("ではユーザー名を入力してください");
             display=false;
+        }
+    }
+    else if(resetOK===true){
+        if(input==="1"){
+            delete data.users[name];
+            data.display=true;
+            console.log("リセットしました");
+            console.log("ユーザー名を入力してください");
+            progress=1;
+            fs.writeFileSync("data.json",JSON.stringify(data,null,2));
+        }
+        else{
+            console.log("リセットを取り止めました");
+            console.log("ユーザー名を入力してください");
+            progress=1;
+            fs.writeFileSync("data.json",JSON.stringify(data,null,2));
         }
     }
     else if(input===".help"){
@@ -65,6 +84,12 @@ process.stdin.on('data',(input)=>{
         console.log("1：はい");
         console.log("2：いいえ");
         deleteOK=true;
+    }
+    else if(input===".reset"){
+        console.log("本当にリセットしますか");
+        console.log("1：はい");
+        console.log("2：いいえ");
+        resetOK=true;
     }
     else if(input===".exit"){
         console.log("ゲームを終了します。");

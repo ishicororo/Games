@@ -33,14 +33,14 @@ process.stdin.on('data',(input)=>{
             console.log("3:五目並べ");
         }
         else if(progress===6||progress===7||progress===8||progress===9||progress===10||progress===11||progress===12){
-            if(data.users[name].playingGame.jankenn===true){
+            if(data.users[name].playingGame==="jankenn"){
                 progress=3;
                 console.log("じゃんけん");
                 console.log("どちらかを選択してください");
                 console.log("1:AIと対戦する");
                 console.log("2:AIとともに相手と対戦する");
             }
-            else if(data.users[name].playingGame.othello===true){
+            else if(data.users[name].playingGame==="othello"){
                 progress=4;
                 console.log("オセロ");
                 console.log("選択してください");
@@ -48,7 +48,7 @@ process.stdin.on('data',(input)=>{
                 console.log("2：AIと対戦ー勝率");
                 console.log("3：2人で対戦");
             }
-            else if(data.users[name].playingGame.gomoku===true){
+            else if(data.users[name].playingGame==="gomoku"){
                 progress=5;
                 console.log("五目並べ");
                 console.log("選択してください")
@@ -63,11 +63,6 @@ process.stdin.on('data',(input)=>{
         name=input;
         data.users[input]={
             info:true,
-            playingGame:{
-                jankenn:false,
-                othello:false,
-                gomoku:false,
-            }
         };
         console.log("初めまして、"+input+"さん");
         process.stdout.write("少々お待ちください...");
@@ -92,7 +87,7 @@ process.stdin.on('data',(input)=>{
     else if(progress===2){
         console.clear();
     if(input==="1"){
-        data.users[name].playingGame.jankenn=true;
+        data.users[name].playingGame="jankenn";
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("じゃんけん");
         console.log("どちらかを選択してください");
@@ -101,7 +96,7 @@ process.stdin.on('data',(input)=>{
         progress=3;
     }
     else if(input==="2"){
-        data.users[name].playingGame.othello=true;
+        data.users[name].playingGame="othello";
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("オセロ");
         console.log("選択してください");
@@ -111,7 +106,7 @@ process.stdin.on('data',(input)=>{
         progress=4;
     }
     else if(input==="3"){
-        data.users[name].playingGame.gomoku=true;
+        data.users[name].playingGame="gomoku";
         fs.writeFileSync('data.json',JSON.stringify(data,null,2));
         console.log("五目並べ");
         console.log("選択してください");
@@ -206,7 +201,23 @@ process.stdin.on('data',(input)=>{
         }
     }
     //じゃんけん（AIと）
-    else if(progress===6){}
+    else if(progress===6){
+        if(input==="グー"||input==="チョキ"||input==="パー"){
+        let answer=playJankennVsAI(input);
+        if(answer==="あなたの勝ちです"||answer==="あなたの負けです"){
+            console.log(answer);
+            console.log("もう一度ゲームをしますか");
+            console.log("1：はい");
+            console.log("2：いいえ");
+        }
+        else{
+            console.log(answer);
+        }
+        }
+        else{
+            console.log("有効な文字を入力してください");
+        }
+    }
     //じゃんけん
     else if(progress===7){}
     //オセロ（コマ数）

@@ -59,12 +59,14 @@ process.stdin.on('data',(input)=>{
             console.log("ユーザー名を入力してください");
             progress=1;
             fs.writeFileSync("data.json",JSON.stringify(data,null,2));
+            resetOK=false;
         }
         else{
             console.log("リセットを取り止めました");
             console.log("ユーザー名を入力してください");
             progress=1;
             fs.writeFileSync("data.json",JSON.stringify(data,null,2));
+            resetOK=false;
         }
     }
     else if(input===".help"){

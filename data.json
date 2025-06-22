@@ -1,5 +1,4 @@
 {
   "display": true,
-  "users": {},
-  "script":"node game.js"
-  }
+  "users": {}
+}

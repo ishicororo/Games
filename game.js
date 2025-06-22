@@ -4,11 +4,65 @@ let progress=1;
 let name;
 process.stdin.setEncoding("utf8");
 console.clear();
-console.log("こんにちは、ユーザー名を入力してください");
+let display;
+let deleteOK=false;
+if(data.display===true){
+    console.log("このゲームの使い方を説明します");
+    console.log("ゲームはじゃんけん、オセロ、五目並べの三種類です");
+    console.log("「.help」でこの案内が出ます");
+    console.log("「.exit」でゲームを終了します");
+    console.log("「.delete」でユーザーを削除します");
+    console.log("「.reset」で全ての設定（ユーザー削除含む）をリセットします");
+    console.log("次からはこの案内を表示しませんか");
+    console.log("1：はい");
+    console.log("2：いいえ");
+    display=true;
+}
+else console.log("こんにちは、ユーザー名を入力してください");
 process.stdin.on('data',(input)=>{
     input=input.trim();
     console.clear();
-    if(input===".exit"){
+    if(deleteOK==="true"){
+        if(input==="1"){
+            delete data.users[name];
+            console.log("現在のユーザーを削除しました");
+            console.log("ユーザー名を入力してください");
+        }
+        else{
+            console.log("削除を取り止めました");
+            console.log("ユーザー名を入力してください");
+        }
+    }
+    else if(display===true){
+        if(input==="1"){
+            data.display=false;
+            fs.writeFileSync("data.json",JSON.stringify(data,null,2));
+            display=false;
+            console.log("では、ユーザー名を入力してください");
+        }
+        else{
+            console.log("了解しました");
+            console.log("ではユーザー名を入力してください");
+        }
+    }
+    else if(input===".help"){
+        console.log("このゲームの使い方を説明します");
+        console.log("ゲームはじゃんけん、オセロ、五目並べの三種類です");
+        console.log("「.help」でこの案内が出ます");
+        console.log("「.exit」でゲームを終了します");
+        console.log("「.delete」でユーザーを削除します");
+        console.log("「.reset」で全ての設定（ユーザー削除含む）をリセットします");
+        console.log("次からはこの案内を表示しませんか");
+        console.log("1：はい");
+        console.log("2：いいえ");
+        display=true;
+    }
+    else if(input===".delete"){
+        console.log("本当に削除しますか");
+        console.log("1：はい");
+        console.log("2：いいえ");
+    }
+    else if(input===".exit"){
         console.log("ゲームを終了します。");
         process.exit();
     }

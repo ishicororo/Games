@@ -27,10 +27,12 @@ process.stdin.on('data',(input)=>{
             delete data.users[name];
             console.log("現在のユーザーを削除しました");
             console.log("ユーザー名を入力してください");
+            fs.writeFileSync("data.json",JSON.stringify(data,null,2));
         }
         else{
             console.log("削除を取り止めました");
             console.log("ユーザー名を入力してください");
+            fs.writeFileSync("data.json",JSON.stringify(data,null,2));
         }
     }
     else if(display===true){

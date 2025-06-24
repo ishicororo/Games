@@ -32,6 +32,7 @@ if(data.display===true){
         }
     })
 }
+else{askName();}
 function askName(){inquirer.prompt([
     {
         type:'input',

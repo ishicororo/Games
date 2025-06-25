@@ -46,9 +46,11 @@ function askName(){inquirer.prompt([
         info:true,
     }
     save();
+    chooseGame();
 }
     else{
         console.log(`こんにちは、${answers.name}さん`);
+        chooseGame();
     }
 })
 }
@@ -60,7 +62,13 @@ function chooseGame(){
         message:"ゲームを選択してください",
         choices:["じゃんけん","オセロ","五目並べ"],
         }
-    ]).then(answers=>{})
+    ]).then(answers=>{
+        if(answers.game==="じゃんけん"){
+            console.log()
+        }
+        else if(answers.game==="オセロ"){}
+        else(answers.game==="五目並べ"){}
+    })
 }
 function jankennoOption(){}
 function othelloOption(){}

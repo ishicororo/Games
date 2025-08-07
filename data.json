@@ -1,4 +1,26 @@
 {
   "display": true,
-  "users": {}
+  "users": {
+    "kihira": {
+      "jankenn": {
+        "first": false,
+        "hand": {
+          "g": [
+            2,
+            {}
+          ],
+          "c": [
+            3,
+            {}
+          ],
+          "p": [
+            4,
+            {}
+          ]
+        }
+      },
+      "othello": {},
+      "gomoku": {}
+    }
+  }
 }

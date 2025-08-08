@@ -1,20 +1,20 @@
 {
-  "display": true,
+  "display": false,
   "users": {
     "kihira": {
       "jankenn": {
         "first": false,
         "hand": {
           "g": [
-            2,
+            16,
             {}
           ],
           "c": [
-            3,
+            18,
             {}
           ],
           "p": [
-            4,
+            15,
             {}
           ]
         }

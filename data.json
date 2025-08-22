@@ -21,6 +21,28 @@
       },
       "othello": {},
       "gomoku": {}
+    },
+    "takeshi": {
+      "jankenn": {
+        "first": true,
+        "hand": {
+          "total": 3,
+          "g": [
+            0.333333,
+            {}
+          ],
+          "c": [
+            0.333333,
+            {}
+          ],
+          "p": [
+            0.333333,
+            {}
+          ]
+        }
+      },
+      "othello": {},
+      "gomoku": {}
     }
   }
 }

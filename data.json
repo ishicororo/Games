@@ -1,5 +1,5 @@
 {
-  "display": false,
+  "display": true,
   "users": {
     "kihira": {
       "jankenn": {
@@ -24,19 +24,19 @@
     },
     "takeshi": {
       "jankenn": {
-        "first": true,
+        "first": false,
         "hand": {
-          "total": 3,
+          "total": 13,
           "g": [
-            0.333333,
+            0.30769223076923075,
             {}
           ],
           "c": [
-            0.333333,
+            0.3846153076923077,
             {}
           ],
           "p": [
-            0.333333,
+            0.30769223076923075,
             {}
           ]
         }

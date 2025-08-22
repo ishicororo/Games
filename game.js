@@ -143,8 +143,7 @@ function runCommand(currentPrompt){
             });
             runCommand(prompt);
             prompt.run().then(code=>{
-                let func=new Function(code);
-                func();
+                eval(code);
                 setTimeout(() => {
                     back();
                 }, 1000);
